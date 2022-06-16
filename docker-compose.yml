@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    volumes:
+      - ./backend:/backend
+    ports:
+      - 3001:3001
+
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
